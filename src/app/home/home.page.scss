@@ -1,0 +1,15 @@
+$white-color: #fff;
+$height100: 100%;
+
+ion-grid {
+    width:100%;
+    height: $height100;
+    background: #1DA1F2;
+}
+ion-row {
+    height: $height100;
+}
+.homePageText{margin-top:200px;}
+.homePageText h3{
+    color:#fff;
+}

@@ -1,0 +1,31 @@
+
+$height100: 100%;
+
+ion-header{
+    text-align: center;
+}
+
+ion-row {
+    height: $height100;
+}
+.searchBar{
+    position: fixed;
+    z-index: 999;
+}
+.clientList{
+    margin-top:50px;
+}
+.toolbar-title {
+    color: #FFFFFF
+  }
+  .new-background-color{
+    --background: #1DA1F2;
+    color: #FFFFFF
+}
+ion-back-button{
+    --color:#FFFFFF;
+}
+
+ion-button {
+    font-weight: 300;
+}

@@ -1,0 +1,49 @@
+
+.errorClass{
+    color: crimson;
+}
+.icon{
+    position: absolute;
+    right: 0;
+}
+$white-color: #fff;
+$height100: 100%;
+
+ion-grid {
+    width:100%;
+    height: $height100;
+    background: #1DA1F2;
+}
+.btnSubmit{
+    text-align: right;
+}
+.btnSubmit p{
+    display:block;
+    text-align: right;
+    font-size: 13px;
+}
+
+ion-row {
+    height: $height100;
+}
+.btnSubmit ion-button{
+    min-width: 100px;
+}
+
+ion-col {
+    border: 1px solid #488aff;
+    background: $white-color;
+}
+
+ion-button {
+    font-weight: 300;
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+    ion-grid {
+        background: #1DA1F2;;
+    }
+    ion-col {
+        border: none;
+    }
+}

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Welcome Admin!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-searchbar [(ngModel)]="searchTerm" placeholder="client search" animated></ion-searchbar>
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let client of clientArr | filter: searchTerm : 'title'">
+      {{client?.title}}
+    
+    </ion-item>    
+    <ion-item *ngIf="(clientArr | filter: searchTerm : 'title').length===0">No Records Found</ion-item>
+  </ion-list>
+</ion-content>

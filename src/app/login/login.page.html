@@ -1,0 +1,46 @@
+<ion-grid>
+  <ion-row justify-content-center>
+    <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+      <div text-center>
+        <h4>Login</h4>
+      </div>
+
+      <form #LoginForm="ngForm" role="form" (ngSubmit)="onSubmit(LoginForm.form.valid)" autocomplete="Off">
+        <div padding>
+          <ion-item>
+            <ion-input name="username" [(ngModel)]="model.username" #username="ngModel" class="form-control" type="text"
+              placeholder="Username" required autocomplete="Off"><ion-icon name="contact" class="icon"></ion-icon></ion-input>
+          </ion-item>
+          <div *ngIf="username.errors && ( (username.dirty || username.touched) || LoginForm. _submitted )">
+            <div class="errorClass" [hidden]="!username.errors.required">
+              Username is required.
+            </div>
+          </div>
+
+          <ion-item>
+            <ion-input name="password" [(ngModel)]="model.password" #password="ngModel" class="form-control" type="password"
+              placeholder="Password" required autocomplete="Off"><ion-icon name="key" class="icon"></ion-icon></ion-input>
+          </ion-item>
+          <div *ngIf="password.errors && ( (password.dirty || password.touched) || LoginForm. _submitted )">
+            <div class="errorClass" [hidden]="!password.errors.required">
+              Password is required.
+            </div>
+          </div>
+          <div padding *ngIf="isValid" class="errorClass">
+            Username or Password is incorrect
+          </div>
+          <div class="btnSubmit" padding>
+            <ion-button type="submit" *ngIf="isProcessing" size="default" href="javascript:void(0)" expand="round" [disabled]="!LoginForm.form.valid">
+                <ion-spinner name="bubbles"></ion-spinner>
+            </ion-button>
+            <ion-button type="submit" *ngIf="!isProcessing" size="default" href="javascript:void(0)" expand="round" [disabled]="!LoginForm.form.valid">Login</ion-button>
+            <div>
+              <p><a style="cursor:pointer" routerLink="/forgotpassword">Forgot Password?</a></p>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </ion-col>
+  </ion-row>
+</ion-grid>
